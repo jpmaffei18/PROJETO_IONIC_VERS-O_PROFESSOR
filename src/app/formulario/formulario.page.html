@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger" mode="ios">
+
+<!-- Botão de back -->
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+<!-- Título -->
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img [src]="image"></ion-img>
+  <form [formGroup]="form">
+     <ion-item>
+        <ion-input label="Nome do Item" placeholder="Digite o nome do Item" label-placement="floating" formControlName="item" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Quantidade" placeholder="Digite a Quantidade" label-placement="floating"  formControlName="quantidade" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-button color="danger" expand="block" [disabled]="!form.valid"> {{nameButton}} </ion-button>
+      
+      
+  </form>
+
+</ion-content>

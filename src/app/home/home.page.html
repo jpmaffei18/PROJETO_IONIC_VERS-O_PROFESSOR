@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger" mode="ios">
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img [src]="image"></ion-img>
+
+<!-- Início da Lista   -->
+  <ion-list>
+
+<!-- ion-item-sliding permite arrastar o item -->
+    <ion-item-sliding *ngFor="let item of minhaLista">
+
+        <!-- Itens da Lista -->
+      <ion-item > 
+        <ion-label> Item: {{item.item}} </ion-label>
+        <ion-label> Quant: {{item.quant}} </ion-label>  
+      </ion-item>
+
+<!-- As Opções do Sliding -->
+      <ion-item-options>
+        
+<!-- Excluir -->
+        <ion-item-option color="danger">
+          <ion-icon name=trash-outline></ion-icon>
+        </ion-item-option>
+
+<!-- Editar -->
+        <ion-item-option color="success">
+          <ion-icon name=create-outline></ion-icon>
+        </ion-item-option>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+<!-- Botão -->
+<ion-fab horizontal="end" vertical="bottom">
+  <ion-fab-button color="danger">
+    <ion-icon routerLink="/formulario" name="add-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
