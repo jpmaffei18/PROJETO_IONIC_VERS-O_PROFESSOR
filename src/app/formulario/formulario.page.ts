@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatabaseService } from '../servico/database.service';
 
 @Component({
   selector: 'app-formulario',
@@ -15,7 +16,7 @@ export class FormularioPage implements OnInit {
   nameButton= "Cadastrar";
 
 /*atributo que guarda os dados do formulário */
-form! :FormGroup;
+form!:FormGroup;
 
 
 
@@ -24,7 +25,13 @@ form! :FormGroup;
 /*Precisamos injetar a ferramenta formbuilder
   A função do formbuilder é criar e validar os campos do formulário*/
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(
+    private formBuilder:FormBuilder,
+    
+    /* Nosso Serviço de banco de dados */
+    private bancoDados:DatabaseService
+    
+    ) { }
 
   ngOnInit() {
     // Inicializar o método validaForm
@@ -35,7 +42,15 @@ form! :FormGroup;
   validaForm(){
     this.form = this.formBuilder.group({
       item: ['',[Validators.required, Validators.minLength(3)]], 
-      quantidade: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
+      quantidade: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(10)]]
     })
   }
+
+/* Método do Botão do Formulário */
+cadastroButton(){
+  /*Usando o método de cadastro do nosso serviço */
+  this.bancoDados.cadastro(this.form.value);
+
+}
+
 }

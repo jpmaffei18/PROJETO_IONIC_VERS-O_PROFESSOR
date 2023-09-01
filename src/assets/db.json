@@ -1,0 +1,44 @@
+{
+  "produtos": [
+    {
+      "item": "Arroz",
+      "quantidade": "5Kg",
+      "id": 1
+    },
+    {
+      "item": "Feijão",
+      "quantidade": "2Kg",
+      "id": 2
+    },
+    {
+      "item": "Ovo",
+      "quantidade": "1 Dúzia",
+      "id": 3
+    },
+    {
+      "item": "Leite",
+      "quantidade": "1L",
+      "id": 4
+    },
+    {
+      "item": "Arroz",
+      "quantidade": "5Kg",
+      "id": 5
+    },
+    {
+      "item": "Feijão",
+      "quantidade": "2Kg",
+      "id": 6
+    },
+    {
+      "item": "Ovo",
+      "quantidade": "1 Dúzia",
+      "id": 7
+    },
+    {
+      "item": "Leite",
+      "quantidade": "1L",
+      "id": 8
+    }
+  ]
+}

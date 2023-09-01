@@ -1,3 +1,4 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar color="danger" mode="ios">
     <ion-title>
@@ -18,15 +19,15 @@
         <!-- Itens da Lista -->
       <ion-item > 
         <ion-label> Item: {{item.item}} </ion-label>
-        <ion-label> Quant: {{item.quant}} </ion-label>  
+        <ion-label> Quant: {{item.quantidade}} </ion-label>  
       </ion-item>
 
 <!-- As Opções do Sliding -->
       <ion-item-options>
         
 <!-- Excluir -->
-        <ion-item-option color="danger">
-          <ion-icon name=trash-outline></ion-icon>
+        <ion-item-option color="danger" (click)="excluir(item.id)">
+          <ion-icon name="trash-outline" ></ion-icon>
         </ion-item-option>
 
 <!-- Editar -->
@@ -41,8 +42,8 @@
   </ion-list>
 
 <!-- Botão -->
-<ion-fab horizontal="end" vertical="bottom">
-  <ion-fab-button color="danger">
+<ion-fab horizontal="end" vertical="bottom" style="position: fixed">
+  <ion-fab-button color="danger" >
     <ion-icon routerLink="/formulario" name="add-outline"></ion-icon>
   </ion-fab-button>
 </ion-fab>
